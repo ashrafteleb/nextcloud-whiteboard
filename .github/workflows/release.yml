@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Set filename
       id: vars
-      run: echo ::set-output name=file_name::drawiowhiteboard${GITHUB_REF/refs\/tags\//}.zip
+      run: echo ::set-output name=file_name::drawiowhiteboard${GITHUB_REF##*/}.zip
     - uses: actions/checkout@master
     - name: Archive Release
       uses: thedoctor0/zip-release@main
